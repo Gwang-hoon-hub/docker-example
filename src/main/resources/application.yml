@@ -1,0 +1,8 @@
+logging:
+  level:
+    root: info
+
+    com:
+      pangpang:
+        dockerexample:
+          controller: info
