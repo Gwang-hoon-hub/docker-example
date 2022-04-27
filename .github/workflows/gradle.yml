@@ -44,7 +44,7 @@ jobs:
       with:
         host: ${{ secrets.EC2_HOST}}
         username: ubuntu
-        key: ${{ EC2_PEM_PRIVATE_KEY }}
+        key: ${{ secrets.EC2_PEM_PRIVATE_KEY }}
         script: |
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
           sudo docker tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ secrets.DOCKER_REPOSITORY }}
