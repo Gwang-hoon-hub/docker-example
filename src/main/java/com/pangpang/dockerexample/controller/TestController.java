@@ -27,4 +27,5 @@ public class TestController {
         logger.warn("Warn Level 테스트");
         logger.error("Error Level 테스트");
     }
+
 }
