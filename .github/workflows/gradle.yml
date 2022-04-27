@@ -30,8 +30,8 @@ jobs:
       run: chmod +x ./gradlew
       #shell: bash
 
-#    - name: Build with Gradle
-#      uses: ./gradlew build
+    - name: Build with Gradle
+      uses: ./gradlew build
 #
 #    - name: Docker build
 #      run: |
