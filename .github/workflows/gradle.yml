@@ -49,8 +49,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_PEM_PRIVATE_KEY }}
         script: |
-          who am i
-#          sudo docker stop server
+          sudo docker stop server
 #          sudo docker rm server
 #          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
 ##          sudo docker tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ secrets.DOCKER_REPOSITORY }}
