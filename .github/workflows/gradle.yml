@@ -36,13 +36,13 @@ jobs:
 #        username: ${{ secrets.DOCKER_USERNAME }}
 #        password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Docker build
+    - name: Docker Login and Build
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
         docker build -t ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }} .
         docker push ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
 
-    - name: Deploy to EC2
+    - name: Deploy to EC2 and Run SSH Script
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.EC2_HOST}}
