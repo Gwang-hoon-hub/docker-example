@@ -48,8 +48,8 @@ jobs:
         host: ${{ secrets.EC2_HOST}}
         username: ubuntu
         key: ${{ secrets.EC2_PEM_PRIVATE_KEY }}
-#        script: |
-#          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
-#          sudo docker tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ secrets.DOCKER_REPOSITORY }}
-#          sudo stop server
-#          sudo docker run -p 80:8080 ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:latest
+        script: |
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
+          sudo docker tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ secrets.DOCKER_REPOSITORY }}
+          sudo stop server
+          sudo docker run -p 80:8080 ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:latest
