@@ -1,4 +1,4 @@
-#FROM openjdk:11.0.10-jre-slim-buster
-#ARG JAR_FILE=build/libs/*.jar
-#COPY ${JAR_FILE} app.jar
-#ENTRYPOINT ["java","-jar","/app.jar"]
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE=build/libs/*.jar
+COPY ${JAR_FILE} docker-example-0.0.1.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
