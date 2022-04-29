@@ -44,5 +44,5 @@ jobs:
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
           sudo docker tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }} ${{ secrets.DOCKER_REPOSITORY }}
           sudo docker stop server
-          sudo docker run -d --rm --name server -p 80:8080 ${{ secrets.DOCKER_REPOSITORY }}
+          sudo docker run -d --rm --name server -p 80:8080 ${{ secrets.DOCKER_REPOSITORY }} -v /etc/localtime:/etc/localtime:ro -it busybox date
           sudo docker image prune -f
