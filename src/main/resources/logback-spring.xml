@@ -13,25 +13,25 @@
     <!-- pattern -->
     <property name="LOG_PATTERN" value="%-5level %d{yy-MM-dd HH:mm:ss}[%thread] [%logger{0}:%line] - %msg%n"/>
 
-<!--    &lt;!&ndash; File Appender &ndash;&gt;-->
-<!--    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
-<!--        &lt;!&ndash; 파일경로 설정 &ndash;&gt;-->
-<!--        <file>${LOG_PATH}/${LOG_FILE_NAME}.log</file>-->
-<!--        &lt;!&ndash; 출력패턴 설정&ndash;&gt;-->
-<!--        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
-<!--            <pattern>${LOG_PATTERN}</pattern>-->
-<!--        </encoder>-->
-<!--    </appender>-->
+    <!-- File Appender -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 파일경로 설정 -->
+        <file>${LOG_PATH}/${LOG_FILE_NAME}.log</file>
+        <!-- 출력패턴 설정-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
 
-<!--    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
-<!--        <encoder>-->
-<!--            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>-->
-<!--        </encoder>-->
-<!--    </appender>-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
 
-<!--    <root level="ERROR">-->
-<!--        <appender-ref ref="STDOUT" />-->
-<!--    </root>-->
+    <root level="ERROR">
+        <appender-ref ref="STDOUT" />
+    </root>
 
     <!-- 에러의 경우 파일에 로그 처리 -->
     <appender name="Error" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -60,7 +60,7 @@
     <!-- root레벨 설정 -->
     <root level="${LOG_LEVEL}">
         <!--        <appender-ref ref="CONSOLE"/>-->
-<!--        <appender-ref ref="FILE"/>-->
+        <appender-ref ref="FILE"/>
         <appender-ref ref="Error"/>
     </root>
 
