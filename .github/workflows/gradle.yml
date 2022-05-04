@@ -44,5 +44,5 @@ jobs:
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
           sudo docker tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }} ${{ secrets.DOCKER_REPOSITORY }}
           sudo docker stop server
-          sudo docker run -d --rm --name server -p 80:8080 ${{ secrets.DOCKER_REPOSITORY }} -v "./$(pwd)/logs:/log.config.path_IS_UNDEFINED"
+          sudo docker run -itd --rm --name server -p 80:8080 ${{ secrets.DOCKER_REPOSITORY }} -v ./$(pwd)/logs:/log.config.path_IS_UNDEFINED server
           sudo docker image prune -f
