@@ -44,5 +44,5 @@ jobs:
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}
           sudo docker tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }} ${{ secrets.DOCKER_REPOSITORY }}
           sudo docker stop server
-          sudo docker run -d --rm --name server -p 80:8080 ${{ secrets.DOCKER_REPOSITORY }} -v was-log:/log.config.path_IS_UNDEFINED --name server busybox touch /log.config.path_IS_UNDEFINED/err_log.log
+          sudo docker run -d --rm --name server -p 80:8080 ${{ secrets.DOCKER_REPOSITORY }} -v "/home/ubuntu/logs:/log.config.path_IS_UNDEFINED"
           sudo docker image prune -f
