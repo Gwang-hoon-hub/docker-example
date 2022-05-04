@@ -1,0 +1,10 @@
+version: "3.9"
+
+service:
+    server:
+        image: docker-example:latest
+        volumes:
+        -/home/ubuntu/logs:/log.config.path_IS_UNDEFINED
+        -/etc/localtime:/etc/localtime:ro
+        ports:
+        -"8080:80"
