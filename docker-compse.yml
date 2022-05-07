@@ -8,3 +8,16 @@ service:
         -/etc/localtime:/etc/localtime:ro
         ports:
         -"8080:80"
+
+    web:
+       image: nginx
+       ports:
+          - 80:80
+       volumes:
+          - ./nginx/conf.d:/etc/nginx/conf.d
+       depends_on:
+          - server
+       server:
+         build: .
+         ports:
+           - 8080:8080
